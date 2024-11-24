@@ -52,10 +52,8 @@ def read_multi_file_in_gzip(AccessToken, data_service_url, temp_pass):
                 df = pd.read_json(decoded_string, dtype=str)
 
             except:
-                import json
 
                 data_dict = json.loads(decoded_string)
-                a = 10
                 df = pd.DataFrame(data_dict.values(), dtype=str, index=data_dict.keys())
                 df = df.transpose()
 
